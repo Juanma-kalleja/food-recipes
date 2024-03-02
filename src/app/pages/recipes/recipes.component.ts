@@ -4,16 +4,19 @@ import { IRecipes, IResult } from '../../models/recipe.model';
 import { Router } from '@angular/router';
 import { SearchComponent } from "../../components/search/search.component";
 import { CommonModule } from '@angular/common';
-
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'; 
+import { faKitchenSet } from '@fortawesome/free-solid-svg-icons';
+import { faSadTear } from '@fortawesome/free-solid-svg-icons';
 @Component({
     selector: 'app-recipes',
     standalone: true,
     templateUrl: './recipes.component.html',
     styleUrl: './recipes.component.css',
-    imports: [SearchComponent, CommonModule]
+    imports: [SearchComponent, CommonModule, FontAwesomeModule]
 })
 export class RecipesComponent implements OnInit{
+  iconCook = faKitchenSet;
+  iconSad = faSadTear;
   query: string = '';
   recipesList: IResult[] = [];
   receivedSearch: string = '';

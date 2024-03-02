@@ -1,10 +1,14 @@
 <div class="container">
   <app-search (searchEvent)="receiveSearch($event)"/>
   @if (loading) {
-    <h2>Search for new recipes</h2>
+    <div class="text-center">
+      <h2>Let's cook!! <fa-icon [icon]="iconCook" class="cook-icon"></fa-icon> Search a recipe</h2>
+    </div>
   }
   @if (recipesList.length == 0 && !loading) {
-    <h2>No recipes found!</h2>
+    <div class="text-center">
+      <h2>No recipes found! <fa-icon [icon]="iconSad" class="sad-icon"></fa-icon></h2>
+    </div>
   }
   @if(recipesList.length != 0) {
     <div class="row row-cols-1 row-cols-md-3 g-4">
