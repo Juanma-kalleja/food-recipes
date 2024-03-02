@@ -1,0 +1,28 @@
+.pagination {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+
+.pagination-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .pagination-button:hover {
+    background-color: #45a049;
+  }
+
+  .active {
+    color: #3e8e41;
+    background-color: #ffffff;
+}

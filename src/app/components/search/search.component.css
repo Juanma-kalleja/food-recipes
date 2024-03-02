@@ -1,0 +1,22 @@
+
+.searchBar {
+    margin: 2rem 15%;
+}
+.input-icon {
+    position: relative;
+  }
+  
+  .input-icon input[type="text"] {
+    padding-left: 30px; /* Adjust this value based on the icon size */
+  }
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px; /* Adjust this value based on the desired icon position */
+    transform: translateY(-50%);
+    color: #666; /* Adjust the color of the icon */
+}
+
+.input-icon input[type="text"]:focus + .search-icon {
+    display: none;
+  }

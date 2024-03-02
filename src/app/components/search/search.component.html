@@ -1,0 +1,15 @@
+<div>
+    <form [formGroup]="searchForm" class="searchBar input-icon" (ngSubmit)="onSearchSubmit()">
+        <!-- <label for="exampleDataList" class="form-label">Datalist example</label> -->
+        
+        <input class="form-control" type="text" typelist="datalistOptions" id="searchValue" formControlName="searchValue" >
+        <fa-icon [icon]="faGlass" class="search-icon"></fa-icon>
+        <!-- <datalist id="datalistOptions">
+            <option value="San Francisco">
+            <option value="New York">
+            <option value="Seattle">
+            <option value="Los Angeles">
+            <option value="Chicago">
+        </datalist> -->
+    </form>
+</div>

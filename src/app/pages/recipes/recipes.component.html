@@ -1,0 +1,33 @@
+<div class="container">
+  <app-search (searchEvent)="receiveSearch($event)"/>
+  @if (loading) {
+    <h2>Search for new recipes</h2>
+  }
+  @if (recipesList.length == 0 && !loading) {
+    <h2>No recipes found!</h2>
+  }
+  @if(recipesList.length != 0) {
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        
+         @for (recipe of displayList(currentPage); track $index) {
+            <div class="col">
+            <div class="card h-100">
+                <img src={{recipe.image}} class="card-img-top" alt={{recipe.title}}>
+                <div class="card-body">
+                  <h5 class="card-title">{{recipe.title}}</h5>
+                  <a (click)="navigate(recipe.id)" class="btn btn-primary">View Detail</a>
+                </div>
+              </div>
+            </div>
+         }
+       
+      </div>
+      <div class="pagination">
+        <div class="pageNumbers" id="pagination">
+          @for (page of setPagination(); track $index) {
+            <button class="pagination-button" [class.active]="currentPage === page" (click)="onPageChange(page)">{{page}}</button>
+          }
+         </div>
+      </div>
+    }
+</div>
